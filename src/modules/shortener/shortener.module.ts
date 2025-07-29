@@ -8,15 +8,18 @@ import { GetShortenerUrlController } from './infra/http/controllers/getShortener
 import { GetShortenerUrlUseCase } from './application/use-cases/getShortenerUrlUseCase';
 import { GetAllShortenerUseCase } from './application/use-cases/getAllShortenerUseCase';
 import { GetAllShortenerController } from './infra/http/controllers/getAllShortenerController';
+import { DeleteShortenerController } from './infra/http/controllers/deleteShortenerController';
+import { DeleteShortenerUseCase } from './application/use-cases/deleteShortenerUseCase';
 
 @Module({
   imports: [DatabaseModule],
   providers: [
     CreateShortenerUseCase,
+    DeleteShortenerUseCase,
     GetShortenerUrlUseCase,
     GetAllShortenerUseCase,
     { provide: IShortenerRepository, useClass: ShortenerRepository },
   ],
-  controllers: [CreateShortenerController, GetShortenerUrlController, GetAllShortenerController],
+  controllers: [CreateShortenerController, DeleteShortenerController, GetShortenerUrlController, GetAllShortenerController],
 })
 export class ShortenerModule {}

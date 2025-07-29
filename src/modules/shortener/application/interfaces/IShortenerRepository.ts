@@ -5,6 +5,7 @@ import { GetAllShortenerUrlsInput } from './shortenerRequest';
 export abstract class IShortenerRepository {
   abstract createShortenerURL(data: Shortener): Promise<Shortener>;
   abstract updateShortenerUrlHit(slug: string): Promise<void>;
+  abstract deleteShortenerUrl(slug: string): Promise<void>;
   abstract findShortenerBySlug(slug: string): Promise<Shortener | null>;
   abstract findAllShortenersUrls(data: GetAllShortenerUrlsInput): Promise<Pagination<Shortener>>;
 }

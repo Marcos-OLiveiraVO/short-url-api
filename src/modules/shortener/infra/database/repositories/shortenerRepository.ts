@@ -26,6 +26,12 @@ export class ShortenerRepository implements IShortenerRepository {
     });
   }
 
+  async deleteShortenerUrl(slug: string): Promise<void> {
+    await this.prisma.shortUrl.deleteMany({
+      where: { slug: slug },
+    });
+  }
+
   async findShortenerBySlug(slug: string): Promise<Shortener | null> {
     const shortener = await this.prisma.shortUrl.findFirst({ where: { slug: slug } });
 

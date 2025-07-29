@@ -21,3 +21,8 @@ export interface ShortenerViewModelOutput {
 export interface GetAllShortenerUrlsInput extends BasePagination {
   profileId: number;
 }
+
+export interface DeleteShortenerInput {
+  slug: string;
+  profileId: number;
+}
