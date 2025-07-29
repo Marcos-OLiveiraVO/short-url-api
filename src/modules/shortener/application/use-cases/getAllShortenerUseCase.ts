@@ -5,7 +5,7 @@ import { Pagination } from '@shared/utils/interfaces/globalRequest';
 import { Shortener } from '../entities/shortener';
 
 @Injectable()
-export class GetAllShortenerUrlsUseCase {
+export class GetAllShortenerUseCase {
   constructor(private shortenerRepository: IShortenerRepository) {}
 
   async execute(data: GetAllShortenerUrlsInput): Promise<Pagination<Shortener>> {

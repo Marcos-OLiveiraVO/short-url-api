@@ -6,17 +6,17 @@ import { IShortenerRepository } from './application/interfaces/IShortenerReposit
 import { ShortenerRepository } from './infra/database/repositories/shortenerRepository';
 import { GetShortenerUrlController } from './infra/http/controllers/getShortenerUrlController';
 import { GetShortenerUrlUseCase } from './application/use-cases/getShortenerUrlUseCase';
-import { GetAllShortenerUrlsController } from './infra/http/controllers/getAllShortenerUrlsController';
-import { GetAllShortenerUrlsUseCase } from './application/use-cases/getAllShortenerUrlsUseCase';
+import { GetAllShortenerUseCase } from './application/use-cases/getAllShortenerUseCase';
+import { GetAllShortenerController } from './infra/http/controllers/getAllShortenerController';
 
 @Module({
   imports: [DatabaseModule],
   providers: [
     CreateShortenerUseCase,
     GetShortenerUrlUseCase,
-    GetAllShortenerUrlsUseCase,
+    GetAllShortenerUseCase,
     { provide: IShortenerRepository, useClass: ShortenerRepository },
   ],
-  controllers: [CreateShortenerController, GetShortenerUrlController, GetAllShortenerUrlsController],
+  controllers: [CreateShortenerController, GetShortenerUrlController, GetAllShortenerController],
 })
 export class ShortenerModule {}

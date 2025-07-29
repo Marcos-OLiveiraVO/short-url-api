@@ -1,20 +1,20 @@
-import { GetAllShortenerUrlsUseCase } from '@shortener/application/use-cases/getAllShortenerUrlsUseCase';
 import { ShortenerViewModel } from '../viewModels/shortenerViewModel';
 import { GlobalRequest, Pagination } from '@shared/utils/interfaces/globalRequest';
 import { Controller, Get, HttpCode, Query, Request } from '@nestjs/common';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { GetAllShortenerUrlsDTO } from '@shortener/infra/adapters/dtos/shortenerDTO';
+import { GetAllShortenerUseCase } from '@shortener/application/use-cases/getAllShortenerUseCase';
 
 @Controller('shorteners')
 @ApiTags('Shortener')
 @ApiBearerAuth()
-export class GetAllShortenerUrlsController {
-  constructor(private getAllShortenerUrlsUseCase: GetAllShortenerUrlsUseCase) {}
+export class GetAllShortenerController {
+  constructor(private getAllShortenerUseCase: GetAllShortenerUseCase) {}
 
   @Get()
   @HttpCode(200)
   async handle(@Query() data: GetAllShortenerUrlsDTO, @Request() req: GlobalRequest): Promise<Pagination<ShortenerViewModel>> {
-    const urls = await this.getAllShortenerUrlsUseCase.execute({
+    const urls = await this.getAllShortenerUseCase.execute({
       ...data,
       profileId: req.user.profileId,
     });
