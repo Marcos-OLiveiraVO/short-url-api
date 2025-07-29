@@ -9,11 +9,11 @@
   - [x] Aceitar requisições autenticadas e não autenticadas.
   - [x] Gerar URL encurtada com no máximo **6 caracteres**.
   - [x] Associar URL ao usuário autenticado.
-- [ ] Endpoint de **redirecionamento**:
-  - [ ] Receber URL encurtada e redirecionar para original.
-  - [ ] Contabilizar acesso ao ser utilizada.
+- [x] Endpoint de **redirecionamento**:
+  - [x] Receber URL encurtada e redirecionar para original.
+  - [x] Contabilizar acesso ao ser utilizada.
 - [ ] Endpoints autenticados:
-  - [ ] Listar URLs encurtadas pelo usuário com contagem de cliques.
+  - [x] Listar URLs encurtadas pelo usuário com contagem de cliques.
   - [ ] Atualizar URL de destino.
   - [ ] Deletar URL encurtada (deleção lógica).
 - [ ] Garantir campo `updatedAt` em todos os registros.

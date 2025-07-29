@@ -17,7 +17,7 @@ async function bootstrap() {
     .setTitle('Shortener URL API')
     .setContact('Marcos Oliveira', 'https://www.linkedin.com/in/marcos-oliveiraaa/', 'marcosoliveira.rd@gmail.com')
     .setDescription('The Shortener URL API description')
-    .setVersion('0.7.0')
+    .setVersion('0.11.1')
     .addBearerAuth({
       description: 'Please enter token in following format: Bearer <JWT>',
       name: 'Authorization',

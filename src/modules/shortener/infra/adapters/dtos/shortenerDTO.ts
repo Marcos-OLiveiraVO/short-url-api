@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsOptional, IsString, IsUrl, MaxLength, IsInt, Min, IsNotEmpty } from 'class-validator';
+import { IsOptional, IsString, IsUrl, MaxLength, IsInt, Min, IsNotEmpty, IsNumber, IsPositive } from 'class-validator';
 
 export class CreateShortenerDTO {
   @ApiProperty({
@@ -34,3 +34,29 @@ export class CreateShortenerDTO {
   @IsNotEmpty({ message: 'originalUrl is required' })
   originalUrl: string;
 }
+
+export class BasePaginationDTO {
+  @ApiProperty({
+    example: 1,
+    description: 'Page number for pagination (optional)',
+    required: false,
+    minimum: 1,
+  })
+  @IsOptional({ message: 'page is optional' })
+  @IsNumber({}, { message: 'page must be a number' })
+  @IsPositive({ message: 'page must be a positive number' })
+  page: number;
+
+  @ApiProperty({
+    example: 10,
+    description: 'Number of items per page (optional)',
+    required: false,
+    minimum: 1,
+  })
+  @IsOptional({ message: 'limit is optional' })
+  @IsNumber({}, { message: 'limit must be a number' })
+  @IsPositive({ message: 'limit must be a positive number' })
+  limit: number;
+}
+
+export class GetAllShortenerUrlsDTO extends BasePaginationDTO {}

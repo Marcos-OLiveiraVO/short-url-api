@@ -2,8 +2,8 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { IProfileRepository } from '../interfaces/IProfileRepository';
 import { CreateProfileLoginInput } from '../interfaces/profileRequest';
 import { SignInResponse } from '@shared/middleware/auth/interfaces/authenticationRequest';
-import { Hash } from '@shared/utils/password';
 import { AuthenticationService } from '@shared/middleware/auth/authenticationService';
+import { Hash } from '@shared/utils/functions/password';
 
 @Injectable()
 export class CreateProfileLoginUseCase {

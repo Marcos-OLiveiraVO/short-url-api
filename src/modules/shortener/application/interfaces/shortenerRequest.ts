@@ -1,3 +1,5 @@
+import { BasePagination } from '@shared/utils/interfaces/globalRequest';
+
 export interface ShortenerInput {
   profileId?: number;
   name?: string;
@@ -14,4 +16,8 @@ export interface ShortenerViewModelOutput {
   createdAt?: Date;
   updatedAt?: Date;
   deletedAt?: Date;
+}
+
+export interface GetAllShortenerUrlsInput extends BasePagination {
+  profileId: number;
 }
