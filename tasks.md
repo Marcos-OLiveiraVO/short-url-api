@@ -3,8 +3,8 @@
 ## 🚀 **MVP (Entrega Básica)**
 
 - [ ] **API REST** implementada com NodeJS (última versão estável).
-- [ ] Cadastro de usuários.
-- [ ] Autenticação via e-mail/senha retornando Bearer Token.
+- [x] Cadastro de usuários.
+- [x] Autenticação via e-mail/senha retornando Bearer Token.
 - [ ] Endpoint para **encurtar URL**:
   - [ ] Aceitar requisições autenticadas e não autenticadas.
   - [ ] Gerar URL encurtada com no máximo **6 caracteres**.
