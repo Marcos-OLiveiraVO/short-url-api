@@ -25,4 +25,11 @@ export class ShortenerRepository implements IShortenerRepository {
 
     return ShortenerMapper.toDomain(shortener);
   }
+
+  async updateShortenerUrlHit(slug: string): Promise<void> {
+    await this.prisma.shortUrl.updateMany({
+      where: { slug: slug },
+      data: { hits: { increment: 1 } },
+    });
+  }
 }
