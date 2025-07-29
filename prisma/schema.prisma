@@ -14,9 +14,29 @@ model profile {
   password String @db.VarChar(350)
 
   createdAt DateTime? @default(now())
-  updatedAt DateTime? @updatedAt
-  deletedAt DateTime? @updatedAt
+  updatedAt DateTime?
+  deletedAt DateTime?
+
+  ShortUrls shortUrl[] @relation(name: "profile_url")
 
   @@index(email)
   @@map("profile")
+}
+
+model shortUrl {
+  id          Int     @id @default(autoincrement())
+  profileId   Int?    @map("profile_id")
+  name        String? @db.VarChar(255)
+  originalUrl String  @map("original_url") @db.VarChar(2048)
+  slug        String  @db.VarChar(6)
+  hits        Int?    @default(0)
+
+  createdAt DateTime? @default(now())
+  updatedAt DateTime?
+  deletedAt DateTime?
+
+  Profile profile? @relation(name: "profile_url", fields: [profileId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+
+  @@index(slug)
+  @@map("short_url")
 }

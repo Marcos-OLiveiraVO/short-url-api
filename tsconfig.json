@@ -12,7 +12,8 @@
     "baseUrl": "./src",
     "paths": {
       "@shared/*": ["shared/*"],
-      "@profile/*": ["modules/profile/*"]
+      "@profile/*": ["modules/profile/*"],
+      "@shortener/*": ["modules/shortener/*"]
     },
     "incremental": true,
     "skipLibCheck": true,

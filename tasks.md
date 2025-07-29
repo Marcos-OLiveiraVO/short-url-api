@@ -5,10 +5,10 @@
 - [ ] **API REST** implementada com NodeJS (última versão estável).
 - [x] Cadastro de usuários.
 - [x] Autenticação via e-mail/senha retornando Bearer Token.
-- [ ] Endpoint para **encurtar URL**:
-  - [ ] Aceitar requisições autenticadas e não autenticadas.
-  - [ ] Gerar URL encurtada com no máximo **6 caracteres**.
-  - [ ] Associar URL ao usuário autenticado.
+- [x] Endpoint para **encurtar URL**:
+  - [x] Aceitar requisições autenticadas e não autenticadas.
+  - [x] Gerar URL encurtada com no máximo **6 caracteres**.
+  - [x] Associar URL ao usuário autenticado.
 - [ ] Endpoint de **redirecionamento**:
   - [ ] Receber URL encurtada e redirecionar para original.
   - [ ] Contabilizar acesso ao ser utilizada.
