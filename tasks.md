@@ -17,11 +17,11 @@
   - [ ] Atualizar URL de destino.
   - [ ] Deletar URL encurtada (deleção lógica).
 - [ ] Garantir campo `updatedAt` em todos os registros.
-- [ ] Implementar soft delete (`deletedAt`) impedindo operações em registros deletados.
-- [ ] Estrutura de tabelas coerente com banco relacional.
+- [x] Implementar soft delete (`deletedAt`) impedindo operações em registros deletados.
+- [x] Estrutura de tabelas coerente com banco relacional.
 - [ ] Contabilização de acessos armazenada corretamente.
 - [ ] **README/CONTRIBUTING** explicando como rodar o projeto.
-- [ ] Definir variáveis de ambiente necessárias.
+- [x] Definir variáveis de ambiente necessárias.
 - [ ] API atende **Maturidade 2 REST**.
 
 ---
@@ -30,7 +30,7 @@
 
 ### 🟢 **Infraestrutura e Deploy**
 
-- [ ] **docker-compose** para subir ambiente localmente.
+- [x] **docker-compose** para subir ambiente localmente.
 - [ ] Deploy em **cloud provider** com link exposto no README.
 - [ ] Artefatos de deploy:
   - [ ] Kubernetes (manifests).
@@ -40,7 +40,7 @@
 ### 🟢 **Qualidade e Observabilidade**
 
 - [ ] Implementar testes unitários.
-- [ ] Documentar API com **OpenAPI/Swagger**.
+- [x] Documentar API com **OpenAPI/Swagger**.
 - [ ] Validar entradas em todos os endpoints.
 - [ ] Implementar observabilidade:
   - [ ] Logs
@@ -61,8 +61,8 @@
 
 ## 🏗️ **Avançado (Escalabilidade e Arquitetura)**
 
-- [ ] Implementar **monorepo** separando serviços:
-  - [ ] Serviço de gerenciamento de identidade e acesso.
+- [x] Implementar **monorepo** separando serviços:
+  - [x] Serviço de gerenciamento de identidade e acesso.
   - [ ] Serviço de regra de negócio do encurtador.
   - [ ] Comunicação entre serviços configurada.
 - [ ] Transformar o sistema em **multi-tenant**.
@@ -73,7 +73,7 @@
 ## 🎯 **Extras**
 
 - [ ] Construir funcionalidades adicionais relevantes ao negócio.
-- [ ] Garantir repositório público (GitHub) com código funcional.
+- [] Garantir repositório público (GitHub) com código funcional.
 - [ ] Projeto deve rodar localmente sem erros de dependência.
 
 ---
