@@ -1,3 +1,4 @@
+import { Shortener } from '@shortener/application/entities/shortener';
 import { ShortenerInput } from '@shortener/application/interfaces/shortenerRequest';
 
 export const shortenerMock: ShortenerInput = {
@@ -10,3 +11,9 @@ export const shortenerWithProfileMock: ShortenerInput = {
   profileId: 1,
   originalUrl: 'https://example.com/blog',
 };
+
+export const shortenerEntityMock = new Shortener({
+  ...shortenerMock,
+  slug: 'hjertl',
+  profileId: 1,
+});
