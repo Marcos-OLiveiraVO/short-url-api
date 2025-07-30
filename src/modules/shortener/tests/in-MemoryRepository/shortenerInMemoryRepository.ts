@@ -26,7 +26,10 @@ export class ShortenerInMemoryRepository implements IShortenerRepository {
   async updateShortenerUrl(data: Shortener): Promise<Shortener> {
     const shortener = Array.from(this.shortener.values()).find(s => s.slug === data.slug && !s.deletedAt);
 
-    const assign = Object.assign(shortener!, data);
+    const assign = Object.assign(shortener!, {
+      ...data,
+      updatedAt: new Date(),
+    });
 
     return this.shortener.set(shortener!.id!, assign).get(shortener!.id!)!;
   }
@@ -38,7 +41,9 @@ export class ShortenerInMemoryRepository implements IShortenerRepository {
       return;
     }
 
-    const assign = Object.assign(shortener, { deletedAt: new Date() });
+    const assign = Object.assign(shortener, {
+      deletedAt: new Date(),
+    });
 
     this.shortener.set(shortener.id!, assign);
   }
