@@ -26,3 +26,10 @@ export interface DeleteShortenerInput {
   slug: string;
   profileId: number;
 }
+
+export interface UpdateShortenerInput {
+  slug: string;
+  name?: string;
+  originalUrl: string;
+  profileId: number;
+}

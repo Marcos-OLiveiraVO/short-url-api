@@ -2,7 +2,7 @@
 
 ## 🚀 **MVP (Entrega Básica)**
 
-- [ ] **API REST** implementada com NodeJS (última versão estável).
+- [x] **API REST** implementada com NodeJS (última versão estável).
 - [x] Cadastro de usuários.
 - [x] Autenticação via e-mail/senha retornando Bearer Token.
 - [x] Endpoint para **encurtar URL**:
@@ -12,17 +12,17 @@
 - [x] Endpoint de **redirecionamento**:
   - [x] Receber URL encurtada e redirecionar para original.
   - [x] Contabilizar acesso ao ser utilizada.
-- [ ] Endpoints autenticados:
+- [x] Endpoints autenticados:
   - [x] Listar URLs encurtadas pelo usuário com contagem de cliques.
-  - [ ] Atualizar URL de destino.
-  - [ ] Deletar URL encurtada (deleção lógica).
-- [ ] Garantir campo `updatedAt` em todos os registros.
+  - [x] Atualizar URL de destino.
+  - [x] Deletar URL encurtada (deleção lógica).
+- [x] Garantir campo `updatedAt` em todos os registros.
 - [x] Implementar soft delete (`deletedAt`) impedindo operações em registros deletados.
 - [x] Estrutura de tabelas coerente com banco relacional.
-- [ ] Contabilização de acessos armazenada corretamente.
+- [x] Contabilização de acessos armazenada corretamente.
 - [ ] **README/CONTRIBUTING** explicando como rodar o projeto.
 - [x] Definir variáveis de ambiente necessárias.
-- [ ] API atende **Maturidade 2 REST**.
+- [x] API atende **Maturidade 2 REST**.
 
 ---
 
@@ -41,7 +41,7 @@
 
 - [ ] Implementar testes unitários.
 - [x] Documentar API com **OpenAPI/Swagger**.
-- [ ] Validar entradas em todos os endpoints.
+- [x] Validar entradas em todos os endpoints.
 - [ ] Implementar observabilidade:
   - [ ] Logs
   - [ ] Métricas

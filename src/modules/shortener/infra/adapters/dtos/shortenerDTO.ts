@@ -1,4 +1,4 @@
-import { ApiProperty } from '@nestjs/swagger';
+import { ApiProperty, OmitType } from '@nestjs/swagger';
 import { IsOptional, IsString, IsUrl, MaxLength, IsInt, Min, IsNotEmpty, IsNumber, IsPositive } from 'class-validator';
 
 export class CreateShortenerDTO {
@@ -60,3 +60,5 @@ export class BasePaginationDTO {
 }
 
 export class GetAllShortenerUrlsDTO extends BasePaginationDTO {}
+
+export class UpdateShortenerDTO extends OmitType(CreateShortenerDTO, ['profileId']) {}
