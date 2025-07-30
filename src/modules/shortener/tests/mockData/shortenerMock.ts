@@ -27,4 +27,5 @@ export const UpdateShortenerMock: UpdateShortenerInput = {
 export const shortenerEntityMockTwo = new Shortener({
   ...shortenerEntityMock.props,
   slug: 'hje21e',
+  profileId: 1,
 });

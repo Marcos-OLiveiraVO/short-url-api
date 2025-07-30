@@ -15,7 +15,7 @@ describe('Get All Shortener UseCase', () => {
   it('should be able to return all Shortener urls if is owner', async () => {
     const spyRepository = jest.spyOn(shortenerRepository, 'findAllShortenersUrls');
 
-    await shortenerRepository.createShortenerURL(shortenerEntityMock);
+    const createdShortener = await shortenerRepository.createShortenerURL(shortenerEntityMock);
 
     const urls = await getAllShortener.execute({
       profileId: shortenerEntityMock.profileId!,
@@ -23,7 +23,7 @@ describe('Get All Shortener UseCase', () => {
 
     expect(spyRepository).toHaveBeenCalledTimes(1);
     expect(urls).toMatchObject({
-      data: [shortenerEntityMock],
+      data: [expect.objectContaining(createdShortener)],
       metadata: {
         currentPage: 1,
         limitPerPage: 10,
@@ -38,7 +38,7 @@ describe('Get All Shortener UseCase', () => {
     const spyRepository = jest.spyOn(shortenerRepository, 'findAllShortenersUrls');
 
     await shortenerRepository.createShortenerURL(shortenerEntityMock);
-    await shortenerRepository.createShortenerURL(shortenerEntityMockTwo);
+    const secondShortener = await shortenerRepository.createShortenerURL(shortenerEntityMockTwo);
 
     const urls = await getAllShortener.execute({
       profileId: shortenerEntityMock.profileId!,
@@ -48,7 +48,7 @@ describe('Get All Shortener UseCase', () => {
 
     expect(spyRepository).toHaveBeenCalledTimes(1);
     expect(urls).toMatchObject({
-      data: [shortenerEntityMockTwo],
+      data: [expect.objectContaining(secondShortener)],
       metadata: {
         currentPage: 2,
         limitPerPage: 1,

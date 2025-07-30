@@ -10,71 +10,76 @@ export class ShortenerInMemoryRepository implements IShortenerRepository {
   async createShortenerURL(data: Shortener): Promise<Shortener> {
     const id = this.shortener.size ? this.shortener.size + 1 : 1;
 
-    return this.shortener.set(id, data).get(id)!;
+    const assign = new Shortener({ ...data.props, createdAt: new Date() }, id);
+    assign.id = id;
+
+    return this.shortener.set(id, assign).get(id)!;
   }
 
   async updateShortenerUrlHit(slug: string): Promise<void> {
-    const shortenerExists = Array.from(this.shortener.values()).find(s => s.slug === slug && !s.deletedAt);
+    const shortenerExists = this.getActiveBySlug(slug);
 
-    if (shortenerExists) {
-      shortenerExists.hits ? shortenerExists.hits++ : (shortenerExists.hits = 1);
-    }
+    const updated = new Shortener({
+      ...shortenerExists!.props,
+      hits: (shortenerExists?.hits || 0) + 1,
+    });
 
-    this.shortener.set(shortenerExists!.id!, shortenerExists!);
+    updated.id = shortenerExists!.id!;
+
+    this.shortener.set(shortenerExists!.id!, updated!);
   }
 
   async updateShortenerUrl(data: Shortener): Promise<Shortener> {
-    const shortener = Array.from(this.shortener.values()).find(s => s.slug === data.slug && !s.deletedAt);
+    const shortener = this.getActiveBySlug(data.slug);
 
-    const assign = Object.assign(shortener!, {
-      ...data,
-      updatedAt: new Date(),
-    });
+    const assign = new Shortener({ ...data.props, updatedAt: new Date() }, shortener!.id);
+    assign.id = shortener!.id!;
 
     return this.shortener.set(shortener!.id!, assign).get(shortener!.id!)!;
   }
 
   async deleteShortenerUrl(slug: string): Promise<void> {
-    const shortener = Array.from(this.shortener.values()).find(s => s.slug === slug && !s.deletedAt);
+    const shortener = this.getActiveBySlug(slug);
 
     if (!shortener) {
       return;
     }
 
-    const assign = Object.assign(shortener, {
-      deletedAt: new Date(),
-    });
+    const deleted = new Shortener({ ...shortener.props, deletedAt: new Date() }, shortener.id);
+    deleted.id = shortener.id!;
 
-    this.shortener.set(shortener.id!, assign);
+    this.shortener.set(shortener.id!, deleted);
   }
 
   async findShortenerBySlug(slug: string): Promise<Shortener | null> {
-    const shortener = Array.from(this.shortener.values()).find(s => s.slug === slug && !s.deletedAt);
-
-    return shortener || null;
+    return Array.from(this.shortener.values()).find(s => s.slug === slug && !s.deletedAt) || null;
   }
 
   async findAllShortenersUrls(data: GetAllShortenerUrlsInput): Promise<Pagination<Shortener>> {
     const limit = data.limit || 10;
     const page = data.page || 1;
 
-    const itensTopSkip = paginationSkipItens(page, limit);
-    const totalUrls = this.shortener.size;
+    const allActive = Array.from(this.shortener.values()).filter(url => url.profileId === data.profileId && !url.deletedAt);
 
-    const urls = Array.from(this.shortener.values()).filter(url => url.profileId === data.profileId && !url.deletedAt);
-    const urlsWithPagination = urls.slice(itensTopSkip, itensTopSkip + limit);
-
-    const totalPages = paginate(totalUrls, limit);
+    const totalItems = allActive.length;
+    const skip = paginationSkipItens(page, limit);
+    const paginated = allActive
+      .slice(skip, skip + limit)
+      .sort((a, b) => (b.createdAt?.getTime() ?? 0) - (a.createdAt?.getTime() ?? 0));
 
     return {
-      data: urlsWithPagination,
+      data: paginated,
       metadata: {
-        totalPages: totalPages,
+        totalPages: paginate(totalItems, limit),
         currentPage: page,
-        totalItemsOnThisPage: urlsWithPagination.length,
-        totalItems: totalUrls,
+        totalItemsOnThisPage: paginated.length,
+        totalItems,
         limitPerPage: limit,
       },
     };
+  }
+
+  private getActiveBySlug(slug: string): Shortener | null {
+    return Array.from(this.shortener.values()).find(s => s.slug === slug && !s.deletedAt) || null;
   }
 }

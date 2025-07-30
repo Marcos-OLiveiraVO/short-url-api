@@ -19,15 +19,15 @@ describe('Delete Shortener UseCase', () => {
     const createdShortener = await shortenerRepository.createShortenerURL(shortenerEntityMock);
 
     await deleteShortener.execute({
-      slug: shortenerEntityMock.slug,
-      profileId: shortenerEntityMock.profileId!,
+      slug: createdShortener.slug,
+      profileId: createdShortener.profileId!,
     });
 
-    const deletedShortener = await shortenerRepository.findShortenerBySlug('hjertl');
+    const deletedShortener = await shortenerRepository.findShortenerBySlug(createdShortener.slug);
 
     expect(spyRepository).toHaveBeenCalledTimes(1);
     expect(createdShortener).toBeInstanceOf(Shortener);
-    expect(deletedShortener).toHaveProperty('deletedAt', expect.any(Date));
+    expect(deletedShortener).toBeNull();
   });
 
   it('should throw a not found exception if Shortener url not exists', async () => {
