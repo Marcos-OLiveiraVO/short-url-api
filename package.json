@@ -20,9 +20,9 @@
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
     "test": "jest",
-    "test:unit": "jest --testRegex=\".*\\.spec\\.ts$\" --watch",
-    "test:watch": "jest --runInBand --testRegex=\".*\\.e2e-spec.ts$\"",
-    "test:cov": "jest --coverage",
+    "test:unit": "dotenv -e .env.dev -- jest --config jest.config.ts --verbose",
+    "test:unit:watch": "dotenv -e .env.dev -- jest jest.config.ts --runInBand --watch",
+    "test:unit:cov": "dotenv -e .env.dev -- jest --coverage --config jest.config.ts",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },

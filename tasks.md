@@ -50,8 +50,8 @@
 
 ### 🟢 **Boas Práticas de DevOps**
 
-- [ ] Utilizar changelog real do desenvolvimento.
-- [ ] Criar Git tags de versões (ex.: 0.1.0, 0.2.0, etc.).
+- [x] Utilizar changelog real do desenvolvimento.
+- [x] Criar Git tags de versões (ex.: 0.1.0, 0.2.0, etc.).
 - [ ] Configurar GitHub Actions para lint e testes automatizados.
 - [ ] Configurar hooks de pré-commit ou pré-push.
 - [ ] Definir e assegurar versão suportada do NodeJS.
@@ -63,8 +63,8 @@
 
 - [x] Implementar **monorepo** separando serviços:
   - [x] Serviço de gerenciamento de identidade e acesso.
-  - [ ] Serviço de regra de negócio do encurtador.
-  - [ ] Comunicação entre serviços configurada.
+  - [x] Serviço de regra de negócio do encurtador.
+  - [x] Comunicação entre serviços configurada.
 - [ ] Transformar o sistema em **multi-tenant**.
 - [ ] Listar no README pontos de melhoria para escalabilidade horizontal e principais desafios.
 
