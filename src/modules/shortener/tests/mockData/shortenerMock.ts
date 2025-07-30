@@ -1,5 +1,5 @@
 import { Shortener } from '@shortener/application/entities/shortener';
-import { ShortenerInput } from '@shortener/application/interfaces/shortenerRequest';
+import { ShortenerInput, UpdateShortenerInput } from '@shortener/application/interfaces/shortenerRequest';
 
 export const shortenerMock: ShortenerInput = {
   name: 'My blog',
@@ -17,3 +17,9 @@ export const shortenerEntityMock = new Shortener({
   slug: 'hjertl',
   profileId: 1,
 });
+
+export const UpdateShortenerMock: UpdateShortenerInput = {
+  slug: shortenerEntityMock.slug,
+  profileId: shortenerEntityMock.profileId!,
+  originalUrl: 'https://www.google.com',
+};

@@ -24,7 +24,11 @@ export class ShortenerInMemoryRepository implements IShortenerRepository {
   }
 
   async updateShortenerUrl(data: Shortener): Promise<Shortener> {
-    throw new Error('Method not implemented.');
+    const shortener = Array.from(this.shortener.values()).find(s => s.slug === data.slug);
+
+    const assign = Object.assign(shortener!, data);
+
+    return this.shortener.set(shortener!.id!, assign).get(shortener!.id!)!;
   }
 
   async deleteShortenerUrl(slug: string): Promise<void> {
