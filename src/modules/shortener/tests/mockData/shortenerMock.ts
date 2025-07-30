@@ -23,3 +23,8 @@ export const UpdateShortenerMock: UpdateShortenerInput = {
   profileId: shortenerEntityMock.profileId!,
   originalUrl: 'https://www.google.com',
 };
+
+export const shortenerEntityMockTwo = new Shortener({
+  ...shortenerEntityMock.props,
+  slug: 'hje21e',
+});

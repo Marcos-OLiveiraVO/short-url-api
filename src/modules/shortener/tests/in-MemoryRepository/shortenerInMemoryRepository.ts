@@ -14,7 +14,7 @@ export class ShortenerInMemoryRepository implements IShortenerRepository {
   }
 
   async updateShortenerUrlHit(slug: string): Promise<void> {
-    const shortenerExists = Array.from(this.shortener.values()).find(s => s.slug === slug);
+    const shortenerExists = Array.from(this.shortener.values()).find(s => s.slug === slug && !s.deletedAt);
 
     if (shortenerExists) {
       shortenerExists.hits ? shortenerExists.hits++ : (shortenerExists.hits = 1);
@@ -24,7 +24,7 @@ export class ShortenerInMemoryRepository implements IShortenerRepository {
   }
 
   async updateShortenerUrl(data: Shortener): Promise<Shortener> {
-    const shortener = Array.from(this.shortener.values()).find(s => s.slug === data.slug);
+    const shortener = Array.from(this.shortener.values()).find(s => s.slug === data.slug && !s.deletedAt);
 
     const assign = Object.assign(shortener!, data);
 
@@ -32,7 +32,7 @@ export class ShortenerInMemoryRepository implements IShortenerRepository {
   }
 
   async deleteShortenerUrl(slug: string): Promise<void> {
-    const shortener = Array.from(this.shortener.values()).find(s => s.slug === slug);
+    const shortener = Array.from(this.shortener.values()).find(s => s.slug === slug && !s.deletedAt);
 
     if (!shortener) {
       return;
@@ -44,7 +44,7 @@ export class ShortenerInMemoryRepository implements IShortenerRepository {
   }
 
   async findShortenerBySlug(slug: string): Promise<Shortener | null> {
-    const shortener = Array.from(this.shortener.values()).find(s => s.slug === slug);
+    const shortener = Array.from(this.shortener.values()).find(s => s.slug === slug && !s.deletedAt);
 
     return shortener || null;
   }
@@ -56,7 +56,7 @@ export class ShortenerInMemoryRepository implements IShortenerRepository {
     const itensTopSkip = paginationSkipItens(page, limit);
     const totalUrls = this.shortener.size;
 
-    const urls = Array.from(this.shortener.values()).filter(url => url.profileId === data.profileId);
+    const urls = Array.from(this.shortener.values()).filter(url => url.profileId === data.profileId && !url.deletedAt);
     const urlsWithPagination = urls.slice(itensTopSkip, itensTopSkip + limit);
 
     const totalPages = paginate(totalUrls, limit);

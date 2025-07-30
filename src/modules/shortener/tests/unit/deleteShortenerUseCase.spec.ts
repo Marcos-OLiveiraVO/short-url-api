@@ -2,7 +2,7 @@ import { IShortenerRepository } from '@shortener/application/interfaces/IShorten
 import { DeleteShortenerUseCase } from '@shortener/application/use-cases/deleteShortenerUseCase';
 import { ShortenerInMemoryRepository } from '../in-MemoryRepository/shortenerInMemoryRepository';
 import { Shortener } from '@shortener/application/entities/shortener';
-import { shortenerEntityMock, shortenerMock } from '../mockData/shortenerMock';
+import { shortenerEntityMock } from '../mockData/shortenerMock';
 import { NotFoundException, UnauthorizedException } from '@nestjs/common';
 
 let deleteShortener: DeleteShortenerUseCase;
