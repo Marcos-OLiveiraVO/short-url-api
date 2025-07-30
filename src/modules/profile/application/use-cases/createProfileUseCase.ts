@@ -1,8 +1,8 @@
 import { ConflictException, Injectable } from '@nestjs/common';
 import { IProfileRepository } from '../interfaces/IProfileRepository';
-import { Hash } from '@shared/utils/password';
 import { Profile } from '../entities/profile';
 import { CreateProfileInput } from '../interfaces/profileRequest';
+import { Hash } from '@shared/utils/functions/password';
 
 @Injectable()
 export class CreateProfileUseCase {

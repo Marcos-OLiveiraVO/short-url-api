@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt';
-import { CompareHashInput } from './interfaces/globalRequest';
+import { CompareHashInput } from '../interfaces/globalRequest';
 
 export class Hash {
   generateHash(password: string): string {

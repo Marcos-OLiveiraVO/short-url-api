@@ -1,5 +1,5 @@
 import { Injectable, OnModuleInit } from '@nestjs/common';
-import { PrismaClient } from '@prisma/client';
+import { Prisma, PrismaClient } from '@prisma/client';
 
 @Injectable()
 export class PrismaService extends PrismaClient implements OnModuleInit {
@@ -12,14 +12,18 @@ export class PrismaService extends PrismaClient implements OnModuleInit {
       query: {
         $allModels: {
           delete: async ({ model, args }) => {
-            await this[model].update({
+            const client = this[model as Prisma.ModelName] as any;
+
+            await client.update({
               where: args.where,
               data: { deletedAt: new Date() },
             });
           },
 
           deleteMany: async ({ model, args }) => {
-            await this[model].updateMany({
+            const client = this[model as Prisma.ModelName] as any;
+
+            await client.updateMany({
               where: args.where,
               data: { deletedAt: new Date() },
             });

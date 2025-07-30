@@ -14,10 +14,10 @@ async function bootstrap() {
   );
 
   const config = new DocumentBuilder()
-    .setTitle('Short URL API')
+    .setTitle('Shortener URL API')
     .setContact('Marcos Oliveira', 'https://www.linkedin.com/in/marcos-oliveiraaa/', 'marcosoliveira.rd@gmail.com')
-    .setDescription('The Short URL API description')
-    .setVersion('0.6.0')
+    .setDescription('The Shortener URL API description')
+    .setVersion('0.11.1')
     .addBearerAuth({
       description: 'Please enter token in following format: Bearer <JWT>',
       name: 'Authorization',

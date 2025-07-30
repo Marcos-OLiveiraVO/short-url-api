@@ -2,27 +2,27 @@
 
 ## 🚀 **MVP (Entrega Básica)**
 
-- [ ] **API REST** implementada com NodeJS (última versão estável).
+- [x] **API REST** implementada com NodeJS (última versão estável).
 - [x] Cadastro de usuários.
 - [x] Autenticação via e-mail/senha retornando Bearer Token.
-- [ ] Endpoint para **encurtar URL**:
-  - [ ] Aceitar requisições autenticadas e não autenticadas.
-  - [ ] Gerar URL encurtada com no máximo **6 caracteres**.
-  - [ ] Associar URL ao usuário autenticado.
-- [ ] Endpoint de **redirecionamento**:
-  - [ ] Receber URL encurtada e redirecionar para original.
-  - [ ] Contabilizar acesso ao ser utilizada.
-- [ ] Endpoints autenticados:
-  - [ ] Listar URLs encurtadas pelo usuário com contagem de cliques.
-  - [ ] Atualizar URL de destino.
-  - [ ] Deletar URL encurtada (deleção lógica).
-- [ ] Garantir campo `updatedAt` em todos os registros.
-- [ ] Implementar soft delete (`deletedAt`) impedindo operações em registros deletados.
-- [ ] Estrutura de tabelas coerente com banco relacional.
-- [ ] Contabilização de acessos armazenada corretamente.
+- [x] Endpoint para **encurtar URL**:
+  - [x] Aceitar requisições autenticadas e não autenticadas.
+  - [x] Gerar URL encurtada com no máximo **6 caracteres**.
+  - [x] Associar URL ao usuário autenticado.
+- [x] Endpoint de **redirecionamento**:
+  - [x] Receber URL encurtada e redirecionar para original.
+  - [x] Contabilizar acesso ao ser utilizada.
+- [x] Endpoints autenticados:
+  - [x] Listar URLs encurtadas pelo usuário com contagem de cliques.
+  - [x] Atualizar URL de destino.
+  - [x] Deletar URL encurtada (deleção lógica).
+- [x] Garantir campo `updatedAt` em todos os registros.
+- [x] Implementar soft delete (`deletedAt`) impedindo operações em registros deletados.
+- [x] Estrutura de tabelas coerente com banco relacional.
+- [x] Contabilização de acessos armazenada corretamente.
 - [ ] **README/CONTRIBUTING** explicando como rodar o projeto.
-- [ ] Definir variáveis de ambiente necessárias.
-- [ ] API atende **Maturidade 2 REST**.
+- [x] Definir variáveis de ambiente necessárias.
+- [x] API atende **Maturidade 2 REST**.
 
 ---
 
@@ -30,7 +30,7 @@
 
 ### 🟢 **Infraestrutura e Deploy**
 
-- [ ] **docker-compose** para subir ambiente localmente.
+- [x] **docker-compose** para subir ambiente localmente.
 - [ ] Deploy em **cloud provider** com link exposto no README.
 - [ ] Artefatos de deploy:
   - [ ] Kubernetes (manifests).
@@ -40,8 +40,8 @@
 ### 🟢 **Qualidade e Observabilidade**
 
 - [ ] Implementar testes unitários.
-- [ ] Documentar API com **OpenAPI/Swagger**.
-- [ ] Validar entradas em todos os endpoints.
+- [x] Documentar API com **OpenAPI/Swagger**.
+- [x] Validar entradas em todos os endpoints.
 - [ ] Implementar observabilidade:
   - [ ] Logs
   - [ ] Métricas
@@ -61,8 +61,8 @@
 
 ## 🏗️ **Avançado (Escalabilidade e Arquitetura)**
 
-- [ ] Implementar **monorepo** separando serviços:
-  - [ ] Serviço de gerenciamento de identidade e acesso.
+- [x] Implementar **monorepo** separando serviços:
+  - [x] Serviço de gerenciamento de identidade e acesso.
   - [ ] Serviço de regra de negócio do encurtador.
   - [ ] Comunicação entre serviços configurada.
 - [ ] Transformar o sistema em **multi-tenant**.
@@ -73,7 +73,7 @@
 ## 🎯 **Extras**
 
 - [ ] Construir funcionalidades adicionais relevantes ao negócio.
-- [ ] Garantir repositório público (GitHub) com código funcional.
+- [] Garantir repositório público (GitHub) com código funcional.
 - [ ] Projeto deve rodar localmente sem erros de dependência.
 
 ---
