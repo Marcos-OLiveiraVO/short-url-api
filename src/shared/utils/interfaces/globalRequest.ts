@@ -24,3 +24,17 @@ export interface BasePagination {
   page?: number;
   limit?: number;
 }
+
+export interface loggerInput {
+  level: string;
+  message: string;
+  context?: Record<string, any>;
+}
+
+export interface RequestWithId extends Request {
+  id: string;
+}
+
+export interface ResponseWithStatusCode extends Response {
+  statusCode: number;
+}
