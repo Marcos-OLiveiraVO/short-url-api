@@ -227,7 +227,35 @@ yarn module
 
 ---
 
+## 📩 Notes
+
+- 🗓️ **Development Timeline**:  
+ 
+   I started development on **Monday (28-07-2025)** and finished on **Friday (01-08-2025)**, completing everything in just **5 days**.
+
+- 🚀 **Deployment Decision**:  
+
+  I decided **not to deploy on AWS** due to time constraints and AWS is not cheap.  
+  However, if implemented, the deployment flow would be:  
+
+```
+  **ECR → ECS → Task Definition (ports, containers, envs) → Cluster → Service → DNS → GitHub Actions pipeline → IAM & Security Group/VPC setup**.
+```
+
+- 🛠️ **Terraform & Infrastructure**:  
+
+  I haven’t had the chance to use **Terraform** in this project, but I know everything could be managed through `.yml` definitions.  
+  
+  Additionally, **Kubernetes** and **API Gateway** are not required here unless we migrate to a **microservice** or **serverless (Lambda)** architecture.
+
+---
+
+✨ That’s all, folks!  
+I hope you enjoy exploring this project, see you on the next step(i hope). 
+
 ## 📩 Contact  
 
 **Author:** [Marcos Oliveira](https://www.linkedin.com/in/marcos-oliveiraaa/)  
 **Email:** [marcosoliveira.rd@gmail.com](mailto:marcosoliveira.rd@gmail.com)  
+
+
