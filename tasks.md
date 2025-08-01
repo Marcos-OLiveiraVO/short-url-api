@@ -54,8 +54,8 @@
 - [x] Criar Git tags de versões (ex.: 0.1.0, 0.2.0, etc.).
 - [ ] Configurar GitHub Actions para lint e testes automatizados.
 - [ ] Configurar hooks de pré-commit ou pré-push.
-- [ ] Definir e assegurar versão suportada do NodeJS.
-- [ ] Garantir código tolerante a falhas.
+- [x] Definir e assegurar versão suportada do NodeJS.
+- [x] Garantir código tolerante a falhas.
 
 ---
 
@@ -73,7 +73,7 @@
 ## 🎯 **Extras**
 
 - [ ] Construir funcionalidades adicionais relevantes ao negócio.
-- [] Garantir repositório público (GitHub) com código funcional.
+- [ ] Garantir repositório público (GitHub) com código funcional.
 - [ ] Projeto deve rodar localmente sem erros de dependência.
 
 ---
