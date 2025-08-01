@@ -1,7 +1,7 @@
 # 🔗 URL Shortener API  
 
 ## 📘 Description  
-Repository that refers to the **URL Shortener Challenge** for the company **Open Teddy Finance**.  
+Repository that refers to the **URL Shortener Challenge** for the company **Teddy Open Finance**.  
 
 This application is a **RESTful API** built with **Node.js + TypeScript + NestJS**, focusing on URL shortening, user authentication, and modular architecture.  
 The system can be run locally using **Docker + Docker Compose** and follows clean architecture principles.  
