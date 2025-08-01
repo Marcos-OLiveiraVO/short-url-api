@@ -15,7 +15,7 @@ export class ProfileInMemoryRepository implements IProfileRepository {
   }
 
   async deleteProfile(profileId: number): Promise<void> {
-    const profile = this.profile.get(profileId);
+    const profile = this.getProfile(profileId);
 
     if (!profile) return;
 
@@ -25,7 +25,7 @@ export class ProfileInMemoryRepository implements IProfileRepository {
   }
 
   async findProfileByEmail(email: string): Promise<FindProfileByEmailOutput | null> {
-    const profile = Array.from(this.profile.values()).find(profile => profile.email === email);
+    const profile = this.getProfile(undefined, email);
 
     if (!profile) return null;
 
@@ -37,10 +37,16 @@ export class ProfileInMemoryRepository implements IProfileRepository {
   }
 
   async findProfileById(profileId: number): Promise<Profile | null> {
-    const profile = this.profile.get(profileId);
+    const profile = this.getProfile(profileId);
 
     if (!profile) return null;
 
     return profile;
+  }
+
+  private getProfile(profileId?: number, email?: string): Profile | undefined {
+    return Array.from(this.profile.values()).find(
+      profile => (profile.email === email && !profile.deletedAt) || (profile.id === profileId && !profile.deletedAt),
+    );
   }
 }
