@@ -5,4 +5,5 @@ export abstract class IProfileRepository {
   abstract createProfile(data: Profile): Promise<void>;
   abstract deleteProfile(profileId: number): Promise<void>;
   abstract findProfileByEmail(email: string): Promise<FindProfileByEmailOutput | null>;
+  abstract findProfileById(profileId: number): Promise<Profile | null>;
 }

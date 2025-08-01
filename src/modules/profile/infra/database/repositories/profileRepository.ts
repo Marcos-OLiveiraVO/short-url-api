@@ -25,6 +25,18 @@ export class ProfileRepository implements IProfileRepository {
     });
   }
 
+  async findProfileById(profileId: number): Promise<Profile | null> {
+    const profile = await this.prisma.profile.findUnique({
+      where: { id: profileId },
+    });
+
+    if (!profile) {
+      return null;
+    }
+
+    return ProfileMapper.toDomain(profile);
+  }
+
   async findProfileByEmail(email: string): Promise<FindProfileByEmailOutput | null> {
     const profile = await this.prisma.profile.findUnique({
       where: { email: email },

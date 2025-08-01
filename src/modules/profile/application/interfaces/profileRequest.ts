@@ -18,3 +18,12 @@ export interface CreateProfileLoginOutput {
   access_token: SignInResponse['access_token'];
   profileId: number;
 }
+
+export interface ProfileViewModelOutput {
+  id: number;
+  name: string;
+  email: string;
+  createdAt?: Date;
+  updatedAt?: Date;
+  deletedAt?: Date;
+}
