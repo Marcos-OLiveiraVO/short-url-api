@@ -77,6 +77,8 @@ All business rules are validated through **unit tests** with 100% coverage.
 - ✅ Logs (Pino), Metrics (Prometheus), Tracing (Jaeger).  
 - ✅ Grafana dashboards for observability.  
 - ✅ CHANGELOD.MD and Git tags for tracking api development.  
+- ✅ Swagger for documentation.  
+- ✅ Profile Manager (Module).  
 
 ---
 
