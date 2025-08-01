@@ -151,6 +151,9 @@ yarn dev
 Once running, visit:  
 👉 `http://localhost:3000/api`  
 
+
+[swagger.webm](https://github.com/user-attachments/assets/b724758e-62b0-4add-9f10-0f3a813682f8)
+
 ---
 
 ## 🔍 Observability  
