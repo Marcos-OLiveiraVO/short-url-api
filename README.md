@@ -76,6 +76,7 @@ All business rules are validated through **unit tests** with 100% coverage.
 - ✅ Prisma middleware for soft delete.  
 - ✅ Logs (Pino), Metrics (Prometheus), Tracing (Jaeger).  
 - ✅ Grafana dashboards for observability.  
+- ✅ CHANGELOD.MD and Git tags for tracking api development.  
 
 ---
 
