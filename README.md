@@ -111,7 +111,7 @@ This separation allows easy testing, scalability, and future migrations.
 ## 🐳 Project Setup  
 
 ### Prerequisites  
-- **Node.js** (v22.14.0)  
+- **Node.js** (v22.17.0)  
 - **Yarn** (v1.22.22)  
 - **Docker & Docker Compose**  
 
@@ -121,7 +121,8 @@ yarn
 ```
 
 ### 2️⃣ Configure environment variables  
-Create `.env` and `.env.dev` files:
+Create `.env` and `.env.dev`.
+For easyble our lifes i commited the **.env.dev** (Not recomended on real-project) files:
 ```env
 
 ##DB
