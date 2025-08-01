@@ -24,6 +24,22 @@ All business rules are validated through **unit tests** with 100% coverage.
 - `DELETE /profile/:profileId` – Delete profile with nested URL deletion.  
 - `GET /profile/:profileId` – Retrieve profile by ID.  
 
+### 🔹 Auth Module
+- Authentication Service.
+- Auth guards.
+- Decorators.
+
+### 🔹 Logger Module
+- Logger Repository with pino.
+- Logger function with fallback (console.log)
+- Enable or desable by env flag (ENABLE_LOGGER)
+
+### 🔹 Observability Module
+- Using **prometheus** as metrics exporter.
+- Using **jaeger** as tracing exporter.
+- Using **nestjs-otel** with several libs tryed to minimalist observability setup.
+- Enable or desable by **env flag** (ENABLE_OBSERVABILITY)
+
 ---
 
 ## 🌟 Version History  
