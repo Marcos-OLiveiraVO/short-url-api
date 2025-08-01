@@ -167,6 +167,8 @@ Run tests:
 ```bash
 yarn test:unit
 ```
+[Screencast from 2025-08-01 18-27-23.webm](https://github.com/user-attachments/assets/ce5a39e6-6149-4787-97c9-e1d5d4523fa2)
+
 
 ---
 
