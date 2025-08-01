@@ -10,7 +10,19 @@ export class ProfileRepository implements IProfileRepository {
   constructor(private prisma: PrismaService) {}
 
   async createProfile(data: Profile): Promise<void> {
-    await this.prisma.profile.create({ data: ProfileMapper.toDatabase(data) });
+    await this.prisma.profile.create({
+      data: ProfileMapper.toDatabase(data),
+    });
+  }
+
+  async deleteProfile(profileId: number): Promise<void> {
+    await this.prisma.profile.deleteMany({
+      where: { id: profileId },
+    });
+
+    await this.prisma.shortUrl.deleteMany({
+      where: { profileId: profileId },
+    });
   }
 
   async findProfileByEmail(email: string): Promise<FindProfileByEmailOutput | null> {

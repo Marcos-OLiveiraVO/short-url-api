@@ -8,15 +8,18 @@ import { CreateProfileLoginController } from './infra/http/controllers/createPro
 import { CreateProfileLoginUseCase } from './application/use-cases/createProfileLoginUseCase';
 import { ProfileRepository } from './infra/database/repositories/profileRepository';
 import { IProfileRepository } from './application/interfaces/IProfileRepository';
+import { DeleteProfileController } from './infra/http/controllers/deleteProfileController';
+import { DeleteProfileUseCase } from './application/use-cases/deleteProfileUseCase';
 
 @Module({
   imports: [DatabaseModule, AuthenticationModule],
   providers: [
     CreateProfileUseCase,
     CreateProfileLoginUseCase,
+    DeleteProfileUseCase,
     AuthenticationService,
     { provide: IProfileRepository, useClass: ProfileRepository },
   ],
-  controllers: [CreateProfileController, CreateProfileLoginController],
+  controllers: [CreateProfileController, CreateProfileLoginController, DeleteProfileController],
 })
 export class ProfileModule {}
