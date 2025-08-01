@@ -10,6 +10,28 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
 
+  jaeger:
+    image: jaegertracing/all-in-one:1.54
+    ports:
+      - '16686:16686' # UI
+      - '4318:4318' # OTLP HTTP
+
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - '9090:9090'
+      - '9464:9464'
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - '3001:3000'
+    depends_on:
+      - prometheus
+      - jaeger
+
   app:
     build:
       context: ./
@@ -22,6 +44,9 @@ services:
       - ./:/node/app/
     depends_on:
       - db
+      - jaeger
+      - prometheus
+      - grafana
     command: sh -c "yarn start:dev"
 
 volumes:

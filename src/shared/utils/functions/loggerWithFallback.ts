@@ -1,8 +1,4 @@
-import {
-  Criticality,
-  LoggerLevelInput,
-  LoggerWithFallbackInput,
-} from '@shared/services/logger/application/interfaces/loggerRequest';
+import { LoggerWithFallbackInput } from '@shared/services/logger/application/interfaces/loggerRequest';
 import { PinoLogger } from 'nestjs-pino';
 
 export const isEnabled = process.env.ENABLE_LOGGER === 'true';

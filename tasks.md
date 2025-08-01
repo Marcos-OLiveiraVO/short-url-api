@@ -42,11 +42,11 @@
 - [ ] Implementar testes unitários.
 - [x] Documentar API com **OpenAPI/Swagger**.
 - [x] Validar entradas em todos os endpoints.
-- [ ] Implementar observabilidade:
-  - [ ] Logs
-  - [ ] Métricas
-  - [ ] Rastreamento
-  - [ ] Variável de ambiente para ativar/desativar.
+- [x] Implementar observabilidade:
+  - [x] Logs
+  - [x] Métricas
+  - [x] Rastreamento
+  - [x] Variável de ambiente para ativar/desativar.
 
 ### 🟢 **Boas Práticas de DevOps**
 
