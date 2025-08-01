@@ -50,7 +50,8 @@ All business rules are validated through **unit tests** with 100% coverage.
 - ✅ Prisma ORM integration.  
 - ✅ Profile and URL Shortener modules implemented.  
 - ✅ Swagger (OpenAPI) documentation.  
-- ✅ Soft delete middleware for Prisma.  
+- ✅ Soft delete middleware for Prisma.
+- ✅ Each feature has his own branch (for easily tracking).
 
 ### **v0.2.0 - Observability & Tests**
 **Added:**  
