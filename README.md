@@ -180,7 +180,11 @@ Once running, visit:
 - **Logs:** Pino + NestJS wrapper  
 - **Metrics:** Prometheus via `@nestjs/otel`  
 - **Tracing:** Jaeger integration  
-- **Grafana:** Centralized monitoring  
+- **Grafana:** Centralized monitoring
+
+You cold go for ''http://localhost:3001/dashboards'' and acces both dashboards metrics and tracing.
+
+[Screencast from 2025-08-01 19-16-48.webm](https://github.com/user-attachments/assets/7774caa4-6acd-4fee-b53d-7805d6116b20)
 
 ---
 
