@@ -168,6 +168,7 @@ Run tests:
 ```bash
 yarn test:unit
 ```
+[Screencast from 2025-08-01 18-30-21.webm](https://github.com/user-attachments/assets/2f562b3b-b63c-470e-8e57-5040e24e0541)
 
 
 ---
@@ -177,6 +178,7 @@ Speed up new module generation:
 ```bash
 yarn module
 ```
+[Screencast from 2025-08-01 18-33-37.webm](https://github.com/user-attachments/assets/6152497c-585b-4a8f-9406-15dbbaa203bf)
 
 ---
 
