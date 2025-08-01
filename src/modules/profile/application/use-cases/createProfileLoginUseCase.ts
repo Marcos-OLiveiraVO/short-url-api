@@ -1,7 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { IProfileRepository } from '../interfaces/IProfileRepository';
-import { CreateProfileLoginInput } from '../interfaces/profileRequest';
-import { SignInResponse } from '@shared/middleware/auth/interfaces/authenticationRequest';
+import { CreateProfileLoginInput, CreateProfileLoginOutput } from '../interfaces/profileRequest';
 import { AuthenticationService } from '@shared/middleware/auth/authenticationService';
 import { Hash } from '@shared/utils/functions/password';
 
@@ -12,7 +11,7 @@ export class CreateProfileLoginUseCase {
     private authService: AuthenticationService,
   ) {}
 
-  async execute(data: CreateProfileLoginInput): Promise<SignInResponse> {
+  async execute(data: CreateProfileLoginInput): Promise<CreateProfileLoginOutput> {
     const profile = await this.profileRepository.findProfileByEmail(data.email);
 
     if (!profile) {
@@ -33,6 +32,9 @@ export class CreateProfileLoginUseCase {
       email: data.email,
     });
 
-    return token;
+    return {
+      profileId: profile.id,
+      access_token: token.access_token,
+    };
   }
 }
