@@ -1,22 +1,93 @@
-## Description
+# 🔗 URL Shortener API  
 
-Esse é um template criado para ser o "padrão" de todo projeto back end pessoal - criado por Marcos - Oliveira, ele segue alguns conceitos de `Domain Drive Design` junto com `clean architecture`, possui uma CLI(em desenvolvimento), que permite a criação de forma automatizada de um modulo.
+## 📘 Description  
+Repository that refers to the **URL Shortener Challenge** for the company **Open Teddy Finance**.  
 
-## Tecnologias Utilizadas
+This application is a **RESTful API** built with **Node.js + TypeScript + NestJS**, focusing on URL shortening, user authentication, and modular architecture.  
+The system can be run locally using **Docker + Docker Compose** and follows clean architecture principles.  
+All business rules are validated through **unit tests** with 100% coverage.  
 
-O projeto é construído com as seguintes tecnologias:
+---
 
-- Typescript
-- Node.js
-- Nestjs
+## ✅ Implemented Features  
 
-## Estrutura de Pastas dos Módulos
+### 🔹 URL Shortener Module
+- `POST /shortener` – Create a shortened URL (supports both authenticated and anonymous users).  
+- `GET /shortener/:slug` – Redirect to the original URL.  
+- `GET /shorteners` – List all user URLs with click count (paginated).  
+- `PUT /shortener/:slug` – Update target URL.  
+- `DELETE /shortener/:slug` – Logical (soft) delete.  
+
+### 🔹 Profile Module
+- `POST /profile` – Create profile.  
+- `POST /login` – Login (email/password) returning JWT.  
+- `DELETE /profile/:profileId` – Delete profile with nested URL deletion.  
+- `GET /profile/:profileId` – Retrieve profile by ID.  
+
+---
+
+## 🌟 Version History  
+
+### **v0.1.0 - Initial Release**
+- ✅ Initial setup with **Node.js + TypeScript + NestJS**.  
+- ✅ CLI implemented to automate module creation.  
+- ✅ Prisma ORM integration.  
+- ✅ Profile and URL Shortener modules implemented.  
+- ✅ Swagger (OpenAPI) documentation.  
+- ✅ Soft delete middleware for Prisma.  
+
+### **v0.2.0 - Observability & Tests**
+**Added:**  
+- ✅ Unit tests for all Shortener use cases using an in-memory repository.  
+- ✅ Logger with Pino + NestJS wrapper (environment-controlled).  
+- ✅ Observability stack with Grafana + Jaeger + Prometheus via `@nestjs/otel`.  
+
+**Fixed:**  
+- ✅ Ensured immutability in unit tests and in-memory repository.  
+
+---
+
+### **v0.3.0 - Profile Improvements**
+**Added:**  
+- ✅ Delete Profile use case with nested deletion.  
+- ✅ Get Profile by ID use case.  
+- ✅ Profile InMemory Repository with unit tests.  
+
+**Changed:**  
+- ✅ Login now returns `profileId` alongside the token.  
+
+---
+
+## 🚀 Features Checklist  
+
+### ✅ **MVP Delivered**
+- REST API with authentication (JWT).  
+- URL shortening with `nanoid` (6-char slugs).  
+- Redirect with click counting.  
+- CRUD operations for URLs (with soft delete).  
+- Pagination for URL listing.  
+- Proper timestamps (`updatedAt`, `deletedAt`).  
+- Environment variables for configuration.  
+- REST Maturity Level 2 compliance.  
+
+### 🌟 **Extra Features**
+- ✅ Docker & Docker Compose support.  
+- ✅ Custom CLI for module creation.  
+- ✅ Prisma middleware for soft delete.  
+- ✅ Logs (Pino), Metrics (Prometheus), Tracing (Jaeger).  
+- ✅ Grafana dashboards for observability.  
+
+---
+
+## 🧱 Architecture  
+
+The project follows **Clean Architecture + DDD**:  
 
 ```
-└── NomeDoMódulo
+└── module
     └── application
         └── entities
-        └── useCases
+        └── use-cases
         └── interfaces
     └── infra
         └── database
@@ -28,40 +99,104 @@ O projeto é construído com as seguintes tecnologias:
             └── dtos
             └── mappers
     └── tests
-        └── e2e
         └── inMemoryRepository
         └── unit
         └── mockData
 ```
 
-## Pré-requisitos
+This separation allows easy testing, scalability, and future migrations.
 
-- Para rodar o template é preciso ter o gerenciador de pacotes `yarn`
-- Node.js versão >= 20.11.0
+---
 
-## Rodar os testes
+## 🐳 Project Setup  
 
-Para rodar os testes automatizados execute o seguinte comando:
+### Prerequisites  
+- **Node.js** (v22.14.0)  
+- **Yarn** (v1.22.22)  
+- **Docker & Docker Compose**  
 
+### 1️⃣ Install dependencies  
 ```bash
-$ yarn test:unit
+yarn
 ```
 
-## Para rodar o projeto
+### 2️⃣ Configure environment variables  
+Create `.env` and `.env.dev` files:
+```env
 
-Para rodar o projeto em ambiente local (dev) execute o seguinte comando:
+##DB
+DATABASE_URL="postgresql://admin:root@db:5432/short-url-db-dev"
 
-```bash
-$ yarn run start
+##JWT
+JWT_EXPIRATION_TIME=77d
+JWT_SECRET='super_secret'
+
+##Observability
+ENABLE_LOGGER=true
+ENABLE_OBSERVABILITY=true
+LOG_LEVEL=error
+JAEGER_ENDPOINT=http://jaeger:4318/v1/traces
+
 ```
 
-## Contribuição
+### 3️⃣ Run containers  
+```bash
+yarn dev
+```
 
-1. Clone o repositório.
-2. Crie um novo branch a partir da branch de stage para sua funcionalidade ou correção de bug: `git checkout -b minha-funcionalidade`.
-3. Implemente suas alterações e certifique-se de que o código esteja de acordo com os padrões de codificação do projeto.
-4. Faça commit das suas alterações com mensagens de commit descritivas: `git commit -m 'Adicionar minha nova funcionalidade'`.
-5. Envie suas alterações para o branch remoto: `git push origin minha-funcionalidade`.
-6. Uma vez finalizada, faça o merge com a branch de `stage`.
-7. De um `git push` para enviar para o repositório remoto.
-8. Abra um pull request para develop, fornecendo uma descrição clara e concisa das alterações propostas.
+---
+
+## 📂 Swagger Documentation  
+Once running, visit:  
+👉 `http://localhost:3000/api`  
+
+---
+
+## 🔍 Observability  
+- **Logs:** Pino + NestJS wrapper  
+- **Metrics:** Prometheus via `@nestjs/otel`  
+- **Tracing:** Jaeger integration  
+- **Grafana:** Centralized monitoring  
+
+---
+
+## 🧪 Testing  
+
+Unit tests cover **100% of business rules**.  
+Run tests:  
+```bash
+yarn test:unit
+```
+
+---
+
+## ⚙️ CLI for Module Creation  
+Speed up new module generation:  
+```bash
+yarn module
+```
+
+---
+
+## 📝 Technical Decisions  
+- **Prisma Soft Delete Middleware** to prevent physical deletions.  
+- **Clean Architecture + DDD** for maintainability.  
+- **Repository Pattern** for cache and logger abstraction.  
+- **Environment-driven observability** (can be toggled).  
+- **Focus on Unit Tests** (critical business logic first).  
+
+---
+
+## 📚 Future Improvements  
+- [ ] Cloud deployment (AWS/Render).  
+- [ ] GitHub Actions CI (lint/tests).  
+- [ ] Pre-commit hooks.  
+- [ ] API Gateway integration.  
+- [ ] Multi-tenant architecture.  
+
+---
+
+## 📩 Contact  
+
+**Author:** [Marcos Oliveira](https://www.linkedin.com/in/marcos-oliveiraaa/)  
+**Email:** [marcosoliveira.rd@gmail.com](mailto:marcosoliveira.rd@gmail.com)  
