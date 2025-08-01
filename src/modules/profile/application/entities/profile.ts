@@ -8,7 +8,7 @@ export interface ProfileProps {
 }
 
 export class Profile {
-  private props: ProfileProps;
+  props: ProfileProps;
   private _id?: number;
 
   constructor(props: ProfileProps, id?: number) {
