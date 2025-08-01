@@ -3,7 +3,7 @@ import { IProfileRepository } from '@profile/application/interfaces/IProfileRepo
 import { FindProfileByEmailOutput } from '@profile/application/interfaces/profileRequest';
 
 export class ProfileInMemoryRepository implements IProfileRepository {
-  private profile = new Map<Number, Profile>();
+  private profile = new Map<number, Profile>();
 
   async createProfile(data: Profile): Promise<void> {
     const id = this.profile.size ? this.profile.size + 1 : 1;

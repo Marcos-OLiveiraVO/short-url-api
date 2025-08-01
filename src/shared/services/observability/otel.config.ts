@@ -22,4 +22,4 @@ const sdk = new NodeSDK({
   instrumentations: [getNodeAutoInstrumentations()],
 });
 
-isEnabled ? sdk.start() : null;
+if (isEnabled) sdk.start();
