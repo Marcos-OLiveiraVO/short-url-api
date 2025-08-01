@@ -20,7 +20,7 @@
 - [x] Implementar soft delete (`deletedAt`) impedindo operações em registros deletados.
 - [x] Estrutura de tabelas coerente com banco relacional.
 - [x] Contabilização de acessos armazenada corretamente.
-- [ ] **README/CONTRIBUTING** explicando como rodar o projeto.
+- [x] **README/CONTRIBUTING** explicando como rodar o projeto.
 - [x] Definir variáveis de ambiente necessárias.
 - [x] API atende **Maturidade 2 REST**.
 
@@ -39,7 +39,7 @@
 
 ### 🟢 **Qualidade e Observabilidade**
 
-- [ ] Implementar testes unitários.
+- [x] Implementar testes unitários.
 - [x] Documentar API com **OpenAPI/Swagger**.
 - [x] Validar entradas em todos os endpoints.
 - [x] Implementar observabilidade:
@@ -72,8 +72,8 @@
 
 ## 🎯 **Extras**
 
-- [ ] Construir funcionalidades adicionais relevantes ao negócio.
-- [ ] Garantir repositório público (GitHub) com código funcional.
-- [ ] Projeto deve rodar localmente sem erros de dependência.
+- [x] Construir funcionalidades adicionais relevantes ao negócio.
+- [x] Garantir repositório público (GitHub) com código funcional.
+- [x] Projeto deve rodar localmente sem erros de dependência.
 
 ---
