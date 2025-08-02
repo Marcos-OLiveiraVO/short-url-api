@@ -262,7 +262,6 @@ yarn module
 ## 📚 Future Improvements
 
 - [ ] Cloud deployment (AWS/Render).
-- [ ] GitHub Actions CI (lint/tests).
 - [ ] Pre-commit hooks.
 - [ ] API Gateway integration.
 - [ ] Multi-tenant architecture.
