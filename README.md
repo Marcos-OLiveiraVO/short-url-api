@@ -264,7 +264,6 @@ yarn module
 ## 📚 Future Improvements
 
 - [ ] Cloud deployment (AWS/Render).
-- [ ] Pre-commit hooks.
 - [ ] API Gateway integration.
 - [ ] Multi-tenant architecture.
 
@@ -291,7 +290,24 @@ yarn module
 
   Additionally, **Kubernetes** and **API Gateway** are not required here unless we migrate to a **microservice** or **serverless (Lambda)** architecture.
 
+
+## 📩 Scaling
+
+In my opinion, this project has a long lifespan before requiring major changes.  
+However, in an extreme growth scenario, we could implement:
+
+- **Auto-Scaling + Load Balancer**  
+Configure **ECS** (or another orchestrator) to automatically scale instances based on demand.  
+Use an **Application Load Balancer (ALB)** to evenly distribute traffic.
+
+- **Database Read Replicas**  
+Create **read-only replicas** to offload heavy query traffic.  
+Route all write operations exclusively to the **primary node**.
+
+- **Rate Limiting via API Gateway**  
+Apply a **rate limit** to protect the system against abuse and prevent overload on critical endpoints.
 ---
+
 
 ✨ That’s all, folks!  
 I hope you enjoy exploring this project, see you on the next step(i hope).
