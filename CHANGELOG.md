@@ -1,6 +1,35 @@
-# Changelog
+## [0.3.0] - 2025-08-01
 
-## [0.2.0] - 2025-08-01
+### Added
+
+- ✅ **Features**
+
+  - Added delete profile use-case with nested delete.
+  - Added get profile by id use-case.
+
+- ✅ **Tests**
+
+  - Added profile InMemory-Repository.
+  - Added create profile use-case unit test.
+  - Added create profile login unit test.
+  - Added delete profile use-case unit test.
+  - Added get profile unit test.
+  - Added private helper function to get profile used in delete profile use-case tests.
+
+- ✅ **CI**
+  - Added Github pipeline that runs **lint** and **unit tests**.
+
+### Fixed
+
+- 🛠️ Adjusted ESLint rules.
+
+### Changed
+
+- 🔄 Modified login response to return `profileId` along with the token.
+
+---
+
+## [0.2.0] - 2025-07-31
 
 ### Added
 
@@ -32,12 +61,12 @@
 - Implemented CLI to automate and standardize module creation.
 - Added Prisma ORM integration.
 - System designed and planned in Excalidraw.
-- Profile module:
+- **Profile module**:
   - Created user profile.
   - Implemented profile login with email and password.
 - Integrated Swagger (OpenAPI) documentation for all routes.
 - Added soft delete middleware for Prisma ORM.
-- Shortener module:
+- **Shortener module**:
   - Created use case for URL shortening.
   - Used nanoid for slug generation.
   - Created Prisma migrations.

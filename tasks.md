@@ -52,7 +52,7 @@
 
 - [x] Utilizar changelog real do desenvolvimento.
 - [x] Criar Git tags de versões (ex.: 0.1.0, 0.2.0, etc.).
-- [ ] Configurar GitHub Actions para lint e testes automatizados.
+- [x] Configurar GitHub Actions para lint e testes automatizados.
 - [ ] Configurar hooks de pré-commit ou pré-push.
 - [x] Definir e assegurar versão suportada do NodeJS.
 - [x] Garantir código tolerante a falhas.
