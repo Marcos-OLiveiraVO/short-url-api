@@ -87,7 +87,7 @@ All business rules are validated through **unit tests** with 100% coverage.
   - ✅ Added get profile unit test.
   - ✅ Added private helper function to get profile used in delete profile use-case tests.
   - ✅ Added Github pipeline that runs **lint** and **unit tests**.
-  - ✅ Added husky with pré-commit and pré-push
+  - ✅ Added husky with pre-commit and pre-push.
 
 
 **Fixed:**
