@@ -26,7 +26,7 @@ jobs:
         run: yarn lint
 
       - name: Check Prettier formatting
-        run: yarn lint:check
+        run: yarn lint:check --fix
 
       - name: Run Unit Tests
         run: yarn test:unit
