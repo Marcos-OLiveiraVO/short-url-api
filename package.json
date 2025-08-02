@@ -10,6 +10,7 @@
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "module": "ts-node cli/index.ts",
+    "prepare": "husky install",
     "start:dev": "nest start --watch",
     "dev": "dotenv -e .env.dev -- docker compose -f docker-compose.dev.yml up --build",
     "db:generate": "dotenv -e .env.dev -- docker compose -f docker-compose.dev.yml exec app npx prisma generate",
@@ -25,6 +26,16 @@
     "test:unit:cov": "dotenv -e .env.dev -- jest --coverage --config jest.config.ts",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json"
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "test/**/*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
@@ -68,7 +79,9 @@
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
+    "husky": "^9.1.7",
     "jest": "^29.5.0",
+    "lint-staged": "^16.1.2",
     "prettier": "^3.0.0",
     "prisma": "^5.10.2",
     "source-map-support": "^0.5.21",
