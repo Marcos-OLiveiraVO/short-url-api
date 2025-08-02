@@ -59,6 +59,7 @@ All business rules are validated through **unit tests** with 100% coverage.
 - ✅ Swagger (OpenAPI) documentation.
 - ✅ Soft delete middleware for Prisma.
 - ✅ Each feature has his own branch (for easily tracking).
+- ✅ Github pipeline that runs **lint** and **unit tests**.
 
 ### **v0.2.0 - Observability & Tests**
 
