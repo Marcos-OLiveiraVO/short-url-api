@@ -66,7 +66,7 @@
   - [x] Serviço de regra de negócio do encurtador.
   - [x] Comunicação entre serviços configurada.
 - [ ] Transformar o sistema em **multi-tenant**.
-- [ ] Listar no README pontos de melhoria para escalabilidade horizontal e principais desafios.
+- [x] Listar no README pontos de melhoria para escalabilidade horizontal e principais desafios.
 
 ---
 
