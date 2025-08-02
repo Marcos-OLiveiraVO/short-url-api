@@ -59,7 +59,6 @@ All business rules are validated through **unit tests** with 100% coverage.
 - ✅ Swagger (OpenAPI) documentation.
 - ✅ Soft delete middleware for Prisma.
 - ✅ Each feature has his own branch (for easily tracking).
-- ✅ Github pipeline that runs **lint** and **unit tests**.
 
 ### **v0.2.0 - Observability & Tests**
 
@@ -82,6 +81,8 @@ All business rules are validated through **unit tests** with 100% coverage.
 - ✅ Delete Profile use case with nested deletion.
 - ✅ Get Profile by ID use case.
 - ✅ Profile InMemory Repository with unit tests.
+- ✅ Github pipeline that runs **lint** and **unit tests**.
+
 
 **Changed:**
 
@@ -112,6 +113,9 @@ All business rules are validated through **unit tests** with 100% coverage.
 - ✅ CHANGELOD.MD and Git tags for tracking api development.
 - ✅ Swagger for documentation.
 - ✅ Profile Manager (Module).
+- ✅ Github pipeline that runs **lint** and **unit tests**.
+- ✅ Each feature has his own branch (for easily tracking).
+
 
 ---
 
