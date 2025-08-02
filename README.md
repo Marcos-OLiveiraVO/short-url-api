@@ -37,14 +37,16 @@ All business rules are validated through **unit tests** with 100% coverage.
 
 - Logger Repository with pino.
 - Logger function with fallback (console.log)
-- Enable or desable by env flag (ENABLE_LOGGER)
+- Enable or disable via env flag (ENABLE_LOGGER).
+
+
 
 ### 🔹 Observability Module
 
 - Using **prometheus** as metrics exporter.
 - Using **jaeger** as tracing exporter.
-- Using **nestjs-otel** with several libs tryed to minimalist observability setup.
-- Enable or desable by **env flag** (ENABLE_OBSERVABILITY)
+- Using **nestjs-otel** with several libraries to create a minimal observability setup.
+- Enable or desable via **env flag** (ENABLE_OBSERVABILITY)
 
 ---
 
@@ -175,7 +177,7 @@ yarn
 ### 2️⃣ Configure environment variables
 
 Create `.env` and `.env.dev`.
-For easyble our lifes i commited the **.env.dev** (Not recomended on real-project) files:
+For convenience, I committed the **.env.dev** file (not recommended in real projects).:
 
 ```env
 
@@ -220,7 +222,7 @@ Once running, visit:
 - **Tracing:** Jaeger integration
 - **Grafana:** Centralized monitoring
 
-You cold go for ''http://localhost:3001/dashboards'' and acces both dashboards metrics and tracing.
+you could go for ''http://localhost:3001/dashboards'' and access both dashboards metrics and tracing.
 
 [Screencast from 2025-08-01 19-16-48.webm](https://github.com/user-attachments/assets/7774caa4-6acd-4fee-b53d-7805d6116b20)
 
