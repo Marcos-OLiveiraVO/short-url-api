@@ -72,23 +72,31 @@ All business rules are validated through **unit tests** with 100% coverage.
 
 - ✅ Ensured immutability in unit tests and in-memory repository.
 
----
-
-### **v0.3.0 - Profile Improvements**
+### [0.3.0] - Tests coverage and CI pipeline
 
 **Added:**
 
-- ✅ Delete Profile use case with nested deletion.
-- ✅ Get Profile by ID use case.
-- ✅ Profile InMemory Repository with unit tests.
-- ✅ Github pipeline that runs **lint** and **unit tests**.
+  - ✅ Feat - added delete profile use-case with nested delete.
+  - ✅ Feat - added get profile by id use-case.
+  - ✅ Added profile InMemory-Repository.
+  - ✅ Added create profile use-case unit test.
+  - ✅ Added create profile login unit test.
+  - ✅ Added delete profile use-case unit test.
+  - ✅ Added get profile unit test.
+  - ✅ Added private helper function to get profile used in delete profile use-case tests.
+  - ✅ Added Github pipeline that runs **lint** and **unit tests**.
 
+**Fixed:**
+
+- ✅ adjusted ESLint rules.
 
 **Changed:**
 
-- ✅ Login now returns `profileId` alongside the token.
+- ✅ modified login response to return `profileId` along with the token.
 
 ---
+
+
 
 ## 🚀 Features Checklist
 
