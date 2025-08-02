@@ -15,6 +15,7 @@
   - Added delete profile use-case unit test.
   - Added get profile unit test.
   - Added private helper function to get profile used in delete profile use-case tests.
+  - Added husky with pré-commit and pré-push
 
 - ✅ **CI**
   - Added Github pipeline that runs **lint** and **unit tests**.
